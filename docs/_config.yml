@@ -17,14 +17,14 @@ minimal_mistakes_skin    : "sunrise" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Shourya's ePortfolio"
+title                    : "Shourya Agarwal"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Your Name"
 description              : "An amazing website."
 url                      : "https://s-agar.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "s-agar/s-agar.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -114,16 +114,19 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  name             : "Hi, I'm Shourya!"
+  avatar           : "assets/images/proheadshot.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "I'm an engineering student at Georgia Tech passionate about technology that improves peoples' lives. I love the combination of hardware, software, and electronics, which is also why I love robotics. I enjoy applying robotics to various fields like medical technology."
+  location         : "Atlanta, GA"
+  # email            : "sagarwal614@gatech.edu"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
   links:
     - label: "Email"
       icon: "fas fa-fw fa-square-envelope"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:sagarwal614@gatech.edu"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/shourya-agarwal-82a62531b/"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -135,7 +138,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/s-agar"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -164,6 +167,10 @@ footer:
       # url:
   since: "2013"
 
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
 
 # Reading Files
 include:
@@ -328,3 +335,16 @@ defaults:
       comments: # true
       share: true
       related: true
+  - scope:
+      path: "pages"
+    values:
+      layout: single
+      author_profile: true # This turns on the sidebar
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: false # Turn this off
+      share: true
+      related: false

@@ -1,5 +1,25 @@
 main:
-  - title: "About"
-    url: /about/
+  - title: "About Me"
+    url: /about-me/
+  - title: "Career Goals"
+    url: /career-goals/
   - title: "Posts"
     url: /year-archive/
+  - title: "Projects"
+    url: /projects/
+  - title: "Resume"
+    url: /resume/
+
+automated_smart_tourniquet_nav:
+  - title: "Automated Smart Tourniquet"
+    children:
+      - title: "Overview"
+        url: /projects/automated-smart-tourniquet/
+      - title: "Final Presentation"
+        url: /projects/automated-smart-tourniquet/final-presentation/
+
+heartbeat_pacemaker_simulator_nav:
+  - title: "Heartbeat and Pacemaker Simulator"
+    children:
+      - title: "Overview"
+        url: /projects/heartbeat-pacemaker-simulator
