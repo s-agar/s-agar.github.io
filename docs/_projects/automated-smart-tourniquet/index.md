@@ -7,11 +7,13 @@ sidebar:
 excerpt: "An automated smart tourniquet that faciliates application and reduces complications. Built at GT MedTech Hack."
 header:
   teaser: /assets/images/automated-smart-tourniquet.jpg
+classes: wide
 ---
 
 <style>
   .pagination { display: none !important; }
 </style>
 
-Here is the full write-up of how my team and I built this tourniquet...
-(You can add images, code snippets, and text here)
+For the 2026 GT MedTech Hackathon, my team and I designed and prototyped an automated smart tourniquet to reduce complications like nerve damage and make application of the tourniquet easier and faster. To automate the tourniquet, we used a microcontroller to tighten the tourniquet by controlling a servo. It stops tightening when a pressure threshold is reached as determined by a force sensor placed inside the tourniquet. We also added a dot-matrix display that shows the time in minutes the pressure threshold has been met for, giving medical professionals the information they need to take over after first-aid. See our final presentation by clicking on the link on the left sidebar.
+
+<img src="/assets/images/automated-smart-tourniquet.jpg">

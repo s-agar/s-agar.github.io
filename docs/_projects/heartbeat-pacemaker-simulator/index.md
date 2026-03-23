@@ -8,6 +8,7 @@ excerpt: "My ECE 1100 Discovery Project in which I design a heartbeat and pacema
 header:
 #   teaser: /assets/images/heartbeat-pacemaker-simulator.jpg
     teaser: /assets/images/general-img-landscape.png
+classes: wide
 ---
 
 <style>

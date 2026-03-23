@@ -4,11 +4,19 @@ permalink: /projects/automated-smart-tourniquet/final-presentation/
 project_main: false
 sidebar:
   nav: "automated_smart_tourniquet_nav"
+classes: wide
 ---
 
 <style>
   .pagination { display: none !important; }
 </style>
 
-Here is the final presentation...
-(You can add images, code snippets, and text here)
+Here is our final presentation that we presented to the judges at the hackathon.
+
+<!-- <iframe src="/assets/files/Healing Hands Presentation.pdf" width="100%" height="600px">
+  <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/assets/files/Healing Hands Presentation.pdf">Download PDF</a>.</p>
+</iframe> -->
+
+<a href="https://gtvault-my.sharepoint.com/:b:/g/personal/sagarwal614_gatech_edu/IQDRnv_jmcs5T4gPE4oBpcF7AfCtytwFceVmde5zIjL3PsA?e=VLJV99&download=1" target="_blank" class="btn btn--info">Download Presentation (PDF)</a>
+
+<iframe src="https://gtvault-my.sharepoint.com/personal/sagarwal614_gatech_edu/_layouts/15/embed.aspx?UniqueId=e3ff9ed1-cb99-4f39-880f-138a01a5c17b" width="100%" height="600px" frameborder="0" scrolling="no" allowfullscreen title="Healing Hands Presentation"></iframe>
