@@ -16,4 +16,4 @@ classes: wide
 </style>
 
 Here is the full write-up of how I made this project...
-(You can add images, code snippets, and text here)
+(Work in Progress)
