@@ -7,6 +7,10 @@ sidebar:
 classes: wide
 ---
 
+<style>
+  .pagination { display: none !important; }
+</style>
+
 Below are CAD screenshots of our final design. A final picture can be found on the Project Overview page. This design includes ergonomic finger indentations for improved grip on the cup and a handle for improved grip on the lid.
 
 <div align="center">
