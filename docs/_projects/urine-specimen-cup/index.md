@@ -20,6 +20,8 @@ classes: wide
 
 Could a water bottle inspire a urine cup? Yuck — maybe it's better to first ask if it even _should_. But my line of thinking started with, "What are common items that may have been modified to make it easier for people with hand or finger impairments to use?" The ultimate challenge my BMED 1000 group and I aimed to address was the difficulty of holding and screwing or unscrewing the cup that individuals with hand and/or finger impairments face. So, a natural parallel to the urine cup was a water bottle. I was confident that someone must have already modified the water bottle to make it easier for others to use. But who, and how? Could the modifications even be useful?
 
+For the most complete picture of our project, see our group's final report by clicking on the link in the left sidebar.
+
 ## Problem Statement
 > Patients with finger or hand impairments need to hold and screw/unscrew the urine cup in order to independently be able to provide urine samples because greater autonomy reduces the potential embarrassment or guilt associated with relying on others. 
 
