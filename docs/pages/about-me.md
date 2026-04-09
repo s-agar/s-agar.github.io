@@ -16,7 +16,7 @@ I strive to get involved in my community and help others through modes beyond ST
 
 ## Hobbies
 
-<i class="fas fa-fw fa-basketball-ball" aria-hidden="true"></i> Basketball: My favorite sport, which I've been playing since 5 years old. I also follow the NBA and my favorite team is the Bulls!  
+<i class="fas fa-fw fa-basketball-ball" aria-hidden="true"></i> Basketball: My favorite sport, which I've been playing since 5 years old. I also follow the NBA, and my favorite team is the Bulls!  
 
 <i class="fas fa-fw fa-gamepad" aria-hidden="true"></i> Video Games: I enjoy playing FIFA, 2K, Madden, and more on my Xbox.  
 
