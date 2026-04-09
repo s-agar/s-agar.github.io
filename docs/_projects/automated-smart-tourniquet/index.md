@@ -1,5 +1,5 @@
 ---
-title: "Automated Smart Tourniquet: Overview"
+title: "Automated Smart Tourniquet"
 permalink: /projects/automated-smart-tourniquet/
 project_main: true
 sidebar:
