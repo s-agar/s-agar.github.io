@@ -23,8 +23,8 @@ heartbeat_pacemaker_simulator_nav:
     children:
       - title: "Overview"
         url: /projects/heartbeat-pacemaker-simulator
-      - title: "Circuit Design"
-        url: /projects/heartbeat-pacemaker-simulator/circuit-design
+      - title: "Circuit Design and Prototyping"
+        url: /projects/heartbeat-pacemaker-simulator/circuit-design-prototyping
 
 urine_specimen_cup_nav:
   - title: "Urine Specimen Cup Redesign"
