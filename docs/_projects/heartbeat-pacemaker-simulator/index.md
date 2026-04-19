@@ -22,3 +22,8 @@ The goal of this project was to improve my analog circuit design, signal process
 ## Background
 
 For my ECE 1100 class, I was tasked with creating a "Discovery Project", or any ECE-related project that would help me build one or more ECE-related skills. I instantly knew I wanted to build something related to the medical field, but I wasn't sure what. Also, as I thought about the skills I wanted to develop, I realized that I didn't want to use a microcontroller or any sort of logical chip, as I already had experience with those things. I wanted to work with more "natural" signals, not 0s and 1s, which is what led me to analog circuitry for this project. And, as I considered natural signals in the medical field, one stood out: the electrical impulse that causes the heart to pump blood. This led me to medical devices that electrically interact with the heart: the pacemaker and the defibrillator. I realized I could model the heart and these devices through an analog circuit. Not only could this allow me to both learn about how they work and about analog circuit design, but it could also be a tool for others to learn about the heart and related devices, as well as a way to encourage others to consider the amazing intersecton between engineering and medicine!
+
+## Skills Practiced
+- Analog Circuit Design
+- Oscilloscope Usage
+- LTSpice Circuit Simulation
