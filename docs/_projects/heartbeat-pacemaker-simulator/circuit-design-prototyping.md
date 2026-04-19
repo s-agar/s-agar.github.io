@@ -35,6 +35,8 @@ And how does it work? Looking at the circuit above: say TR1 is off and TR2 is on
 
 ## Heartbeat Circuit
 
+I decided to design and prototype the hearbeat circuit first. This circuit would blink an LED on and off at a standard resting heart rate (60 to 100 beats per minute).
+
 ### Circuit Schematic
 
 I began by recreating the astable multivibrator circuit diagram shown above. However, I made a small mistake: to try to simplify the circuit, I put the LED in series with R1 instead of in parallel with TR1. I did not realize what effect this would have on the circuit until much later...
