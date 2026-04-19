@@ -75,7 +75,7 @@ To understand why my circuit timing was off, I searched the web for more tutoria
         
     So, the LED is off for longer than it is on, and the total period should be about 1.28 seconds, not 1.38 seconds. This changed the formula for the period to T = 1.28\*R\*C. However, 1.28s was still very far from the measured period, which brought me to the second culprit.
 2. **Base Starvation**: Using 100K ohm resistors for R2 and R3 restricted the base current for each transistor to just 44 microamps (4.4V/100K), meaning that transistors were not fully opening. Thus, their collectors were not dropping down to 0V, but instead to a slightly higher voltage, shrinking the voltage swings and thus the period.
-    - The 2n2222 transistors I used typically have a gain of about 100, meaning 1 microamp of current into the base allows 100 microamps to flow through the collector. However, this ratio may not always allow the transistor to turn fully on. Using Forced Beta, or assuming a gain of only 10, ensures that the transistor turns on completely.
+    - The 2N2222 transistors I used typically have a gain of about 100, meaning 1 microamp of current into the base allows 100 microamps to flow through the collector. However, this ratio may not always allow the transistor to turn fully on. Using Forced Beta, or assuming a gain of only 10, ensures that the transistor turns on completely.
     - Since I used 220 ohm resistors for R1 and R4, the LED was able to draw up to 23 milliamps, meaning that a base current of 2.3 millamps was required to allow this current through the transistor (assuming Forced Beta). Thus, the 44 microamps present at the base was much too low.
 
 To eliminate the base starvation, I made three changes:
