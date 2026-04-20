@@ -6,7 +6,7 @@ sidebar:
   nav: heartbeat_pacemaker_simulator_nav
 excerpt: "My ECE 1100 Discovery Project in which I design a heartbeat and pacemaker simulator circuit for modelling purposes."
 header:
-  teaser: /assets/images/heartbeat-pacemaker-simulator.jpg
+  teaser: /assets/images/heartbeat-pacemaker-simulator.JPG
 # classes: wide
 toc: true
 ---
@@ -15,7 +15,7 @@ toc: true
   .pagination { display: none !important; }
 </style>
 
-<img src="/assets/images/heartbeat-pacemaker-simulator.jpg" style="width: 100%; height: auto;">
+<img src="/assets/images/heartbeat-pacemaker-simulator.JPG" style="width: 100%; height: auto;">
 
 The goal of this project was to improve my analog circuit design, signal processing, and oscilloscope skills while also learning about the heart and related medical devices. This project entailed creating a circuit model of a heart and a corresponding pacemaker. One part of the circuit simulates a heartbeat via a timed signal and an LED that pulses according to the signal. The other part of the circuit simulates a demand pacemaker that detects when the heartbeat becomes irregular or stops and then sends a pulse to correct or replace the heartbeat. Users can interact with this model by disconnecting a wire to simulate an irregular or stopped heartbeat. Two stretch goals of this project include adding parts to the circuit to model a defibrillator and designing and fabricating a PCB for the circuit, both of which I plan to do in the future.
 
