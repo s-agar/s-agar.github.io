@@ -4,7 +4,8 @@ permalink: "/projects/heartbeat-pacemaker-simulator/circuit-design-prototyping"
 project_main: false
 sidebar:
   nav: "heartbeat_pacemaker_simulator_nav"
-classes: wide
+# classes: wide
+toc: true
 ---
 
 <style>

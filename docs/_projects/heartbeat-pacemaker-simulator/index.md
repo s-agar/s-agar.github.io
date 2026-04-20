@@ -7,7 +7,8 @@ sidebar:
 excerpt: "My ECE 1100 Discovery Project in which I design a heartbeat and pacemaker simulator circuit for modelling purposes."
 header:
   teaser: /assets/images/heartbeat-pacemaker-simulator.jpg
-classes: wide
+# classes: wide
+toc: true
 ---
 
 <style>
