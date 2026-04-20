@@ -1,5 +1,5 @@
 ---
-title: "Circuit Simulation"
+title: "Oscilloscope Analysis"
 permalink: "/projects/heartbeat-pacemaker-simulator/oscilloscope-analysis"
 project_main: false
 sidebar:
