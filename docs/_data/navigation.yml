@@ -23,6 +23,8 @@ heartbeat_pacemaker_simulator_nav:
     children:
       - title: "Overview"
         url: /projects/heartbeat-pacemaker-simulator
+      - title: "Demo"
+        url: /projects/heartbeat-pacemaker-simulator/demo
       - title: "Circuit Design and Prototyping"
         url: /projects/heartbeat-pacemaker-simulator/circuit-design-prototyping
 
