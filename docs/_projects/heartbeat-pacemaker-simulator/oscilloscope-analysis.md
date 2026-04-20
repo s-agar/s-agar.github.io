@@ -11,8 +11,10 @@ classes: wide
   .pagination { display: none !important; }
 </style>
 
-
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- image of msox 4034a -->
+<figure>
+    <img src="/assets/images/Keysight-MSOX4024A-b0.png.png" style="width: 100%; height: auto;">
+    <figcaption>The MSOX 4034A oscilloscope. <a href="https://www.datatec.eu/MSOX4034A">Source</a></figcaption>
+</figure>
 
 To precisely analyze the circuit after simulating it over spring break, I used Keysight's MSOX4034A oscilloscope to measure the output signal and to determine characteristics like frequency.
 
@@ -20,10 +22,10 @@ To precisely analyze the circuit after simulating it over spring break, I used K
 
 The heart rate came out to 1.3683 Hz, or about 82 BPM, similar to the 85 BPM I estimated using the online BPM counter.
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- scope0 -->
+<img src="/assets/images/scope_0.png" style="width: 100%; height: auto;">
 
 ## Pacemaker
 
 After disconnecting the heart output, the pacemaker's heart rate came out to 1.1218 Hz, or about 73 BPM, very close the 72 BPM I estimated using the online BPM counter.
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- scope1 -->
+<img src="/assets/images/scope_1.png" style="width: 100%; height: auto;">

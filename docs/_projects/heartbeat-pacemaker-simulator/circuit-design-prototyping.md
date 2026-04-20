@@ -41,11 +41,14 @@ I decided to design and prototype the hearbeat circuit first. This circuit would
 
 I began by recreating the astable multivibrator circuit diagram shown above. However, I made a small mistake: to try to simplify the circuit, I put the LED in series with R1 instead of in parallel with TR1. I did not realize what effect this would have on the circuit until much later...
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- circuit diagram, img 9605 -->
+<img src="/assets/images/astable-schematic.png" style="width: 100%; height: auto;">
 
 To determine the effect on the circuit timing that values for R2, R3, C1, and C2 had, I used the time constant formula depicted below. This formula is derived from the standard capacitor voltage vs. time equation. The resistors R1 and R4 do not affect the timing significantly if they are much smaller then R3 and R4, and they primarily limit the current going through the output, meaning that for an LED, they should usually be between 100 and 1000 ohms.
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- formula -->
+<figure>
+    <img src="/assets/images/astable-formula.gif" style="width: 100%; height: auto;">
+    <figcaption>The formula for calculating the frequency of the output signal. <a href="https://www.electronics-tutorials.ws/waveforms/astable.html">Source</a></figcaption>
+</figure>
 
 The biggest capacitor I initially had access to was 22 microfarads, so I started with that for C1 and C2. I then picked a large resistor, 1 megaohm, for R2 and R3 to slow the pulsing of the LED down to a low frequency so that I could easily measure the period. This would allow me to compare the theoretical period of about 30 seconds with the actual period and ensure that my circuit was built correctly.
 
@@ -58,7 +61,7 @@ I used a breadboard to prototype this circuit, and I used an Arduino Nano's 5V a
 
 I tried 100K ohms for R2 and R3 instead of 1 megaohm, and I also procured 10 microfarad capacitors. This should have decreased the period down to about 1.38 seconds. To measure the tiny period, I used an online beats-per-minute counter that musicians use to keep time. I tapped the button each time the LED turned on, and I was then able to find a period of about 0.75 seconds. This was still way off! 
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- img 9484 -->
+<img src="/assets/images/astable-picture.jpg" style="width: 100%; height: auto;">
 
 To understand why my circuit timing was off, I searched the web for more tutorials, forums, and troubleshooting tips. Ultimately, I found two things that seemed to be causing the problem:
 1. **Asymmetry**: Usually, components are connected to each of an astable multivibrator's two outputs, as shown in the schematic above. I connected an LED to just one output ("Output 1") and did not use the second output. Here's why this is a problem:
@@ -85,7 +88,7 @@ To eliminate the base starvation, I made three changes:
 
 Using the online BPM counter again, I measured the actual period to be about 0.71 seconds. This was much closer to my calculated estimate of 0.768 seconds, and accounting for component tolerances (20% for the capacitors) meant that the two periods matched very well. Moreover, I now had a LED that blinked every 0.71 seconds, or at about 85 BPM, perfect for mimicking a standard resting heart rate.
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- video 9529 -->
+<div style="max-width: 1280px"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe src="https://gtvault-my.sharepoint.com/personal/sagarwal614_gatech_edu/_layouts/15/embed.aspx?UniqueId=2580d30b-f4e7-4cb5-b176-4c579124f36f&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="heartbeat-video.MOV" style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
 
 ## Pacemaker Circuit
 
@@ -93,7 +96,7 @@ I then recreated the heartbeat circuit and modified the components to blink the 
 
 I changed R3 and R4 from 6K to 7.1K. This increased the theoretical period to about 0.91 seconds, leading to an expected rate of 66 BPM.
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- video 9563, add note about second LED -->
+<div style="max-width: 1280px"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe src="https://gtvault-my.sharepoint.com/personal/sagarwal614_gatech_edu/_layouts/15/embed.aspx?UniqueId=ff2fa679-24cd-41ad-92a2-281f403703be&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="pacemaker-video.MOV" style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div> <!-- add note about second LED -->
 
 I measured the actual period to be about 0.83 seconds, giving an actual rate of about 72 BPM. This was visibly below the 85 BPM of the heart and not too far from 60 BPM, so I was satisified.
 
@@ -124,6 +127,6 @@ To solve the second challenge of merging the separate circuit outputs into a sin
 
 Below is the final circuit schematic.
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- img 9626, add note about diode and resistor for sensing circuit -->
+<img src="/assets/images/final-schematic.png" style="width: 100%; height: auto;"> <!-- add note about diode and resistor for sensing circuit -->
 
 Watch me demo the circuit by clicking the link on the left sidebar.
