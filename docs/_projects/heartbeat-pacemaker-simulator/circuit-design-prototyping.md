@@ -62,7 +62,7 @@ I used a breadboard to prototype this circuit, and I used an Arduino Nano's 5V a
 
 I tried 100K ohms for R2 and R3 instead of 1 megaohm, and I also procured 10 microfarad capacitors. This should have decreased the period down to about 1.38 seconds. To measure the tiny period, I used an online beats-per-minute counter that musicians use to keep time. I tapped the button each time the LED turned on, and I was then able to find a period of about 0.75 seconds. This was still way off! 
 
-<img src="/assets/images/astable-picture.jpg" style="width: 100%; height: auto;">
+<img src="/assets/images/astable-picture.JPG" style="width: 100%; height: auto;">
 
 To understand why my circuit timing was off, I searched the web for more tutorials, forums, and troubleshooting tips. Ultimately, I found two things that seemed to be causing the problem:
 1. **Asymmetry**: Usually, components are connected to each of an astable multivibrator's two outputs, as shown in the schematic above. I connected an LED to just one output ("Output 1") and did not use the second output. Here's why this is a problem:
