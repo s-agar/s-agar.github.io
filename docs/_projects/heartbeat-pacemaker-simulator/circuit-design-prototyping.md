@@ -41,7 +41,7 @@ I decided to design and prototype the hearbeat circuit first. This circuit would
 
 I began by recreating the astable multivibrator circuit diagram shown above. However, I made a small mistake: to try to simplify the circuit, I put the LED in series with R1 instead of in parallel with TR1. I did not realize what effect this would have on the circuit until much later...
 
-<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- circuit diagram -->
+<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- circuit diagram, img 9605 -->
 
 To determine the effect on the circuit timing that values for R2, R3, C1, and C2 had, I used the time constant formula depicted below. This formula is derived from the standard capacitor voltage vs. time equation. The resistors R1 and R4 do not affect the timing significantly if they are much smaller then R3 and R4, and they primarily limit the current going through the output, meaning that for an LED, they should usually be between 100 and 1000 ohms.
 
@@ -86,3 +86,44 @@ To eliminate the base starvation, I made three changes:
 Using the online BPM counter again, I measured the actual period to be about 0.71 seconds. This was much closer to my calculated estimate of 0.768 seconds, and accounting for component tolerances (20% for the capacitors) meant that the two periods matched very well. Moreover, I now had a LED that blinked every 0.71 seconds, or at about 85 BPM, perfect for mimicking a standard resting heart rate.
 
 <img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- video 9529 -->
+
+## Pacemaker Circuit
+
+I then recreated the heartbeat circuit and modified the components to blink the LED at a slightly slower rate. Most demand pacemakers begin pacing at about 60 BPM, so my goal was to blink the LED at this rate.
+
+I changed R3 and R4 from 6K to 7.1K. This increased the theoretical period to about 0.91 seconds, leading to an expected rate of 66 BPM.
+
+<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- video 9563, add note about second LED -->
+
+I measured the actual period to be about 0.83 seconds, giving an actual rate of about 72 BPM. This was visibly below the 85 BPM of the heart and not too far from 60 BPM, so I was satisified.
+
+## Combined Circuit
+
+Next, I needed to combine the heartbeat and pacemaker circuits into a single circuit. This circuit would have to blink the LED on and off at the heartbeat rate of 85 BPM. It would have to have a wire that could be disconnected to stop the heart, and a method for the pacemaker to sense the stopped heart and take over for the heart at about 72 BPM.
+
+Thus, there were two main challenges I had to solve:
+1. Determine how to keep the pacemaker off until it sensed that the heart stopped "beating" (someone unplugged the wire), and then turn the pacemaker on.
+2. Figure out how to merge the separate heartbeat and pacemaker outputs into a single LED.
+
+### Sensing
+
+To solve the first challenge of sensing a stopped or irregular heartbeat, my initial approach was as follows:
+- In the pacemaker circuit, I connected the collector of a new transistor to one leg of C2 and the emitter to the other leg of C2.
+-  I then connected the base to "Output 1" of the heartbeat circuit.
+My goal with this approach was to short the capacitor and empty its stored charge every time the heart output turned on by using the heart output to switch on the new transistor that I connected across the capacitor. However, this didn't work, probably because there was no path to ground for the capacitor to discharge into. The pacemaker circuit kept on blinking its LED. Also, I realized that this approach was flawed because the heart could still be blinking properly even if the output was off, since there would be a period of time when it had to be off every cycle. Thus, if the two cycles were offset in a certain manner, C2 of the pacemaker could still charge up and eventually turn on "Output 1" of the pacemaker.
+
+While reviewing my circuit schematic to come up with a new approach, I noticed a new problem. I had placed the LED in each circuit in series with R1 instead of placing it in parallel with TR1. This meant that every time TR1 switched on, the LED switched on. But in an actual astable multivibrator circuit, every time TR1 switches on, the output switches off, and vice versa. This happens because, when TR1 switches on, the current coming out of R1 has a direct path to ground, which it would prefer to take instead of going through the LED, which forces the LED off. When TR1 switches off, the only path the current has to ground is through the LED, thereby turning the LED on.
+
+My subsequent approach was to use the output of the heartbeat circuit to charge a capacitor. This capacitor would charge during the time the output of the heartbeat circuit was on, and would then discharge during the time the output was off. It would discharge into the base of a new transistor. The collector of this transistor would be connected to ground to create a path from the emitter to ground. And instead of connecting the emitter to C2 of the pacemaker circuit, I would connect it to the base of TR2 of the pacemaker circuit, thereby pulling the base to ground and turning TR2 off every time the heart turned on. This would force TR1 to be on because of the opposite nature of TR1 and TR2, thereby turning off the output of the pacemaker circuit. If the hearbeat circuit turned off and missed a cycle, the capacitor would not charge up and then discharge in time to turn TR2 off before C1 naturally turned TR2 on, thereby turning TR1 off, turning the output of the pacemaker circuit on, and finally allowing the pacemaker to take over. This approach also solved the potential problem of incorrectly assuming the heartbeat was stopped while the heart output was off that the first approach had.
+
+### Merging
+
+To solve the second challenge of merging the separate circuit outputs into a single LED, I decided to connect standard 1N4007 diodes to the output of each circuit. The anode of each diode connected to the output, and the cathode connected to the LED. Because of the diodes, the output current from the heartbeat can flow into the LED, and the output current from the Pacemaker can flow into the LED, but they cannot flow backward into each other.
+
+## Final Circuit
+
+Below is the final circuit schematic.
+
+<img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- img 9626, add note about diode and resistor for sensing circuit -->
+
+Watch me demo the circuit by clicking the link on the left sidebar.
