@@ -42,4 +42,4 @@ The heartbeat circuit was connected to the output, so the frequency should have 
 
 <img src="/assets/images/general-img-landscape.png" style="width: 100%; height: auto;"> <!-- schematic/graph 4 -->
 
-Now, the freqeuncy was about 1.12 Hz, or about 67 BPM. Since the pacemaker was activated, the frequency should have been about 66 BPM as calculated. Again, the simulation was very close to the expected circuit.
+Now, the frequency was about 1.12 Hz, or about 67 BPM. Since the pacemaker was activated, the frequency should have been about 66 BPM as calculated. Again, the simulation was very close to the expected circuit.
