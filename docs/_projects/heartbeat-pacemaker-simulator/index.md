@@ -9,6 +9,7 @@ header:
   teaser: /assets/images/heartbeat-pacemaker-simulator.jpg
 # classes: wide
 toc: true
+toc_sticky: true
 ---
 
 <style>

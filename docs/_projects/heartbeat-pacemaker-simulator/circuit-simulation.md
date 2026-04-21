@@ -6,6 +6,7 @@ sidebar:
   nav: "heartbeat_pacemaker_simulator_nav"
 # classes: wide
 toc: true
+toc_sticky: true
 ---
 
 <style>
