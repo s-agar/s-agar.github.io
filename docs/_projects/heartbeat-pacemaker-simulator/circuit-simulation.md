@@ -43,7 +43,9 @@ I next recreated the full circuit in LTSpice. Using the "startup" command and cr
 <img src="/assets/images/HeartbeatPacemakerSimulator_schematic1.png" style="width: 100%; height: auto;">
 <img src="/assets/images/HeartbeatPacemakerSimulator_graph1.png" style="width: 100%; height: auto;">
 
-The heartbeat circuit was connected to the output, so the frequency should have been about 78 BPM as calculated. This time, the frequency was 1.31 Hz, or about 78.6 BPM, meaning that the simulation was very close to the expected circuit. Somehow, the frequency changed from 68 BPM when only the heartbeat circuit was present to 78 BPM. I then made a break in the circuit by disconnecting R1 from TR1 (Q1), thereby simulating a user disconnecting the heartbeat wire to start the pacemaker.
+The heartbeat circuit was connected to the output, so the frequency should have been about 78 BPM as calculated. This time, the frequency was 1.31 Hz, or about 78.6 BPM, meaning that the simulation was very close to the expected circuit. Somehow, the frequency changed from 68 BPM when only the heartbeat circuit was present to 78 BPM.
+
+I then made a break in the circuit by disconnecting R1 from TR1 (Q1), thereby simulating a user disconnecting the heartbeat wire to start the pacemaker.
 
 <img src="/assets/images/HeartbeatPacemakerSimulator_schematic2.png" style="width: 100%; height: auto;">
 <img src="/assets/images/HeartbeatPacemakerSimulator_graph2.png" style="width: 100%; height: auto;">

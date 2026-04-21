@@ -13,7 +13,9 @@ toc_sticky: true
   .pagination { display: none !important; }
 </style>
 
-When researching different approaches to essentially create two timers, one for the heart and one for the pacemaker, the astable (or free-running) multivibrator caught my eye. I could have used, say, a quartz crystal oscillator, but I felt like this wasn't "natural," in the sense that how such a component worked wasn't immediately intuitive to me, and probably wouldn't be to others. But an astable multivibrator can be explained in a relatively simple manner: there are two "buckets" of charge, or capacitors, and only one can be filled at a time. Each bucket takes the same amount of time to fill every time, so when a bucket is filled, it can be emptied into a pipe at a regular interval. Furthermore, every component, in an astable multivibrator circuit, and especially the capacitors, can easily be seen on a circuit board.
+When researching different approaches to essentially create two timers, one for the heart and one for the pacemaker, the astable (or free-running) multivibrator caught my eye. I could have used, say, a quartz crystal oscillator, but I felt like this wasn't "natural," in the sense that how such a component worked wasn't immediately intuitive to me, and probably wouldn't be to others.
+
+But an astable multivibrator can be explained in a relatively simple manner: there are two "buckets" of charge, or capacitors, and only one can be filled at a time. Each bucket takes the same amount of time to fill every time, so when a bucket is filled, it can be emptied into a pipe at a regular interval. Furthermore, every component in an astable multivibrator circuit, and especially the capacitors, can easily be seen on a circuit board.
 
 ## Astable Multivibrator
 
@@ -24,7 +26,15 @@ But what exactly is an astable multivibrator? According to [this source](https:/
         <summary>
         An aside
         </summary>
-        The astable multivibrator was especially fascinating to me because I had just learned about latches, or cross-coupled transistors, in my digital design class. According to the linked source above, cross-coupled transistors are the core of each of the different types of multivibrators, like monostable, bistable, and astable. In fact, latches are a type of bistable multivibrator, since they have two stable (or resting) states: high or low. The "astable" in "astable multivibrator," therefore, means that the circuit does not have a stable or resting state. This makes sense when considering the fact that the circuit is relentlessly switching between high and low at its two outputs.
+        <p>
+        The astable multivibrator was especially fascinating to me because I had just learned about latches, or cross-coupled transistors, in my digital design class.
+        </p>
+        <p>
+        According to the linked source above, cross-coupled transistors are the core of each of the different types of multivibrators, like monostable, bistable, and astable.
+        </p>
+        <p>
+        In fact, latches are a type of bistable multivibrator, since they have two stable (or resting) states: high or low. The "astable" in "astable multivibrator," therefore, means that the circuit does not have a stable or resting state. This makes sense when considering the fact that the circuit is relentlessly switching between high and low at its two outputs.
+        </p>
     </details>
 </blockquote>
 
@@ -33,7 +43,15 @@ But what exactly is an astable multivibrator? According to [this source](https:/
     <figcaption>An astable multivibrator circuit diagram. <a href="https://www.electronics-tutorials.ws/waveforms/astable.html">Source</a></figcaption>
 </figure>
 
-And how does it work? Looking at the circuit above: say TR1 is off and TR2 is on. Then Plate A of C1 is essentially connected straight to Vcc (6V) as there is no voltage drop through R1 (no current is flowing through the resistor since TR1 is not conducting any). Plate B of C1 has about 0.6V because standard NPN transistors usually require a base-emitted voltage of 0.6 to 0.7V. This creates a potential difference of 5.4V across C1. Since TR2 is on, C2 starts to charge up, and as soon as it reaches this 0.6V threshold, it turns TR1 on, causing Plate A of C1 to fall to 0V (with ideal components). This happens because TR1 acts like a closed switch that connects Plate A of C1 straight to ground. The drop in voltage from 6V to 0V on Plate A of C1 causes an equal and instantaneous drop in voltage on Plate B, pulling it down to -5.4V. This reverse voltage turns TR2 off. Since TR1 is now on and TR2 is now off, C1 begins to charge up from -5.4V towards the 6V supply. As C1 reaches 0.6V, though, it turns TR2 back on and TR1 off. Now, the circuit is back to the state described originally, and the whole process repeats again, and again, and again.
+And how does it work? Looking at the circuit above: say TR1 is off and TR2 is on. Then Plate A of C1 is essentially connected straight to Vcc (6V) as there is no voltage drop through R1 (no current is flowing through the resistor since TR1 is not conducting any).
+
+Plate B of C1 has about 0.6V because standard NPN transistors usually require a base-emitted voltage of 0.6 to 0.7V. This creates a potential difference of 5.4V across C1. 
+
+Since TR2 is on, C2 starts to charge up, and as soon as it reaches this 0.6V threshold, it turns TR1 on, causing Plate A of C1 to fall to 0V (with ideal components). This happens because TR1 acts like a closed switch that connects Plate A of C1 straight to ground.
+
+The drop in voltage from 6V to 0V on Plate A of C1 causes an equal and instantaneous drop in voltage on Plate B, pulling it down to -5.4V. This reverse voltage turns TR2 off.
+
+Since TR1 is now on and TR2 is now off, C1 begins to charge up from -5.4V towards the 6V supply. As C1 reaches 0.6V, though, it turns TR2 back on and TR1 off. Now, the circuit is back to the state described originally, and the whole process repeats again, and again, and again.
 
 ## Heartbeat Circuit
 
@@ -121,12 +139,23 @@ Thus, there were two main challenges I had to solve:
 
 To solve the first challenge of sensing a stopped or irregular heartbeat, my initial approach was as follows:
 - In the pacemaker circuit, I connected the collector of a new transistor to one leg of C2 and the emitter to the other leg of C2.
--  I then connected the base to "Output 1" of the heartbeat circuit.
-My goal with this approach was to short the capacitor and empty its stored charge every time the heart output turned on by using the heart output to switch on the new transistor that I connected across the capacitor. However, this didn't work, probably because there was no path to ground for the capacitor to discharge into. The pacemaker circuit kept on blinking its LED. Also, I realized that this approach was flawed because the heart could still be blinking properly even if the output was off, since there would be a period of time when it had to be off every cycle. Thus, if the two cycles were offset in a certain manner, C2 of the pacemaker could still charge up and eventually turn on "Output 1" of the pacemaker.
+- I then connected the base to "Output 1" of the heartbeat circuit.
+    
+My goal with this approach was to short the capacitor and empty its stored charge every time the heart output turned on by using the heart output to switch on the new transistor that I connected across the capacitor. However, this didn't work, probably because there was no path to ground for the capacitor to discharge into. The pacemaker circuit kept on blinking its LED.
 
-While reviewing my circuit schematic to come up with a new approach, I noticed a new problem. I had placed the LED in each circuit in series with R1 instead of placing it in parallel with TR1. This meant that every time TR1 switched on, the LED switched on. But in an actual astable multivibrator circuit, every time TR1 switches on, the output switches off, and vice versa. This happens because, when TR1 switches on, the current coming out of R1 has a direct path to ground, which it would prefer to take instead of going through the LED, which forces the LED off. When TR1 switches off, the only path the current has to ground is through the LED, thereby turning the LED on.
+Also, I realized that this approach was flawed because the heart could still be blinking properly even if the output was off, since there would be a period of time when it had to be off every cycle. Thus, if the two cycles were offset in a certain manner, C2 of the pacemaker could still charge up and eventually turn on "Output 1" of the pacemaker.
 
-My subsequent approach was to use the output of the heartbeat circuit to charge a capacitor. This capacitor would charge during the time the output of the heartbeat circuit was on, and would then discharge during the time the output was off. It would discharge into the base of a new transistor. The collector of this transistor would be connected to ground to create a path from the emitter to ground. And instead of connecting the emitter to C2 of the pacemaker circuit, I would connect it to the base of TR2 of the pacemaker circuit, thereby pulling the base to ground and turning TR2 off every time the heart turned on. This would force TR1 to be on because of the opposite nature of TR1 and TR2, thereby turning off the output of the pacemaker circuit. If the hearbeat circuit turned off and missed a cycle, the capacitor would not charge up and then discharge in time to turn TR2 off before C1 naturally turned TR2 on, thereby turning TR1 off, turning the output of the pacemaker circuit on, and finally allowing the pacemaker to take over. This approach also solved the potential problem of incorrectly assuming the heartbeat was stopped while the heart output was off that the first approach had.
+While reviewing my circuit schematic to come up with a new approach, I noticed a new problem. I had placed the LED in each circuit in series with R1 instead of placing it in parallel with TR1. This meant that every time TR1 switched on, the LED switched on.
+
+In a standard astable multivibrator circuit, though, every time TR1 switches on, the output switches off, and vice versa. This happens because, when TR1 switches on, the current coming out of R1 has a direct path to ground, which it would prefer to take instead of going through the LED, which forces the LED off. When TR1 switches off, the only path the current has to ground is through the LED, thereby turning the LED on.
+
+My subsequent approach was to use the output of the heartbeat circuit to charge a capacitor. This capacitor would charge during the time the output of the heartbeat circuit was on, and would then discharge during the time the output was off. It would discharge into the base of a new transistor.
+
+The collector of this transistor would be connected to ground to create a path from the emitter to ground. And instead of connecting the emitter to C2 of the pacemaker circuit, I would connect it to the base of TR2 of the pacemaker circuit, thereby pulling the base to ground and turning TR2 off every time the heart turned on. This would force TR1 to be on because of the opposite nature of TR1 and TR2, thereby turning off the output of the pacemaker circuit.
+
+If the hearbeat circuit turned off and missed a cycle, the capacitor would not charge up and then discharge in time to turn TR2 off before C1 naturally turned TR2 on, thereby turning TR1 off, turning the output of the pacemaker circuit on, and finally allowing the pacemaker to take over.
+
+This approach also solved the potential problem that the first approach had: incorrectly assuming the heartbeat was stopped while the heart output was off.
 
 ### Merging
 
