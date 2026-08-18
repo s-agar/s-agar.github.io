@@ -108,7 +108,7 @@ To eliminate the base starvation, I made three changes:
 
 Using the online BPM counter again, I measured the actual period to be about 0.71 seconds. This was much closer to my calculated estimate of 0.768 seconds, and accounting for component tolerances (20% for the capacitors) meant that the two periods matched very well. Moreover, I now had a LED that blinked every 0.71 seconds, or at about 85 BPM, perfect for mimicking a standard resting heart rate.
 
-<a href="https://gtvault-my.sharepoint.com/:v:/g/personal/sagarwal614_gatech_edu/IQAL04Al5_S1TLF2TFeRJPNvARZfRuemXU0vKIKmXeuOeIY?download=1" target="_blank" class="btn btn--info">Download Video (MOV)</a>
+<a href="https://gtvault-my.sharepoint.com/:v:/g/personal/sagarwal614_gatech_edu/IQAL04Al5_S1TLF2TFeRJPNvAU51Ip-VVmbXsf9eAtuxXLc?e=6FaJcC&download=1" target="_blank" class="btn btn--info">Download Video (MOV)</a>
 
 <div style="max-width: 1280px"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe src="https://gtvault-my.sharepoint.com/personal/sagarwal614_gatech_edu/_layouts/15/embed.aspx?UniqueId=2580d30b-f4e7-4cb5-b176-4c579124f36f&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="heartbeat-video.MOV" style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
 
@@ -118,7 +118,7 @@ I then recreated the heartbeat circuit and modified the components to blink the 
 
 I changed R3 and R4 from 6K to 7.1K. This increased the theoretical period to about 0.91 seconds, leading to an expected rate of 66 BPM.
 
-<a href="https://gtvault-my.sharepoint.com/:v:/g/personal/sagarwal614_gatech_edu/IQB5pi__zSStQZKiKB9ANwO-AfqjE5ffR1HQOFSwgIxMhxM?download=1" target="_blank" class="btn btn--info">Download Video (MOV)</a>
+<a href="https://gtvault-my.sharepoint.com/:v:/g/personal/sagarwal614_gatech_edu/IQB5pi__zSStQZKiKB9ANwO-AQ_cwIlM6Abbc4I3tUihAgE?e=wRPRCg&download=1" target="_blank" class="btn btn--info">Download Video (MOV)</a>
 
 <figure style="display: block; width: 100%; max-width: 1280px; margin: 0 auto;">
     <div style="max-width: 1280px"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe src="https://gtvault-my.sharepoint.com/personal/sagarwal614_gatech_edu/_layouts/15/embed.aspx?UniqueId=ff2fa679-24cd-41ad-92a2-281f403703be&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="pacemaker-video.MOV" style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
