@@ -18,6 +18,16 @@ automated_smart_tourniquet_nav:
       - title: "Final Presentation"
         url: /projects/automated-smart-tourniquet/final-presentation/
 
+ben_bite_switch_joystick_nav:
+  - title: "Ben's Bite Switch and Joystick"
+    children:
+      - title: "Overview"
+        url: /projects/ben-bite-switch-joystick
+      - title: "Documentation and Assembly Guide"
+        url: /projects/ben-bite-switch-joystick/documentation-assembly-guide
+      - title: "GIC Submission Video"
+        url: /projects/ben-bite-switch-joystick/gic-submission-video
+
 heartbeat_pacemaker_simulator_nav:
   - title: "Heartbeat and Pacemaker Simulator"
     children:
