@@ -55,7 +55,7 @@ Since TR1 is now on and TR2 is now off, C1 begins to charge up from -5.4V toward
 
 ## Heartbeat Circuit
 
-I decided to design and prototype the hearbeat circuit first. This circuit would blink an LED on and off at a standard resting heart rate (60 to 100 beats per minute).
+I decided to design and prototype the heartbeat circuit first. This circuit would blink an LED on and off at a standard resting heart rate (60 to 100 beats per minute).
 
 ### Circuit Schematic
 
@@ -153,7 +153,7 @@ My subsequent approach was to use the output of the heartbeat circuit to charge 
 
 The collector of this transistor would be connected to ground to create a path from the emitter to ground. And instead of connecting the emitter to C2 of the pacemaker circuit, I would connect it to the base of TR2 of the pacemaker circuit, thereby pulling the base to ground and turning TR2 off every time the heart turned on. This would force TR1 to be on because of the opposite nature of TR1 and TR2, thereby turning off the output of the pacemaker circuit.
 
-If the hearbeat circuit turned off and missed a cycle, the capacitor would not charge up and then discharge in time to turn TR2 off before C1 naturally turned TR2 on, thereby turning TR1 off, turning the output of the pacemaker circuit on, and finally allowing the pacemaker to take over.
+If the heartbeat circuit turned off and missed a cycle, the capacitor would not charge up and then discharge in time to turn TR2 off before C1 naturally turned TR2 on, thereby turning TR1 off, turning the output of the pacemaker circuit on, and finally allowing the pacemaker to take over.
 
 This approach also solved the potential problem that the first approach had: incorrectly assuming the heartbeat was stopped while the heart output was off.
 

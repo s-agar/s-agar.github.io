@@ -4,7 +4,7 @@ permalink: /projects/automated-smart-tourniquet/
 project_main: true
 sidebar:
   nav: "automated_smart_tourniquet_nav"
-excerpt: "An automated smart tourniquet that faciliates application and reduces complications. Built at GT MedTech Hack."
+excerpt: "An automated smart tourniquet that facilitates application and reduces complications. Built at GT MedTech Hack."
 header:
   teaser: /assets/images/automated-smart-tourniquet.jpg
 classes: wide

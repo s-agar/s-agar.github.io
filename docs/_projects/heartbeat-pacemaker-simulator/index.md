@@ -1,5 +1,5 @@
 ---
-title: "Hearbeat and Pacemaker Simulator"
+title: "Heartbeat and Pacemaker Simulator"
 permalink: "/projects/heartbeat-pacemaker-simulator"
 project_main: true
 sidebar:
