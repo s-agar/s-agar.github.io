@@ -116,7 +116,7 @@ analytics:
 author:
   name             : "Hi, I'm Shourya!"
   avatar           : "assets/images/proheadshot.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I'm an engineering student at Georgia Tech passionate about technology that improves peoples' lives. I love the combination of hardware, software, and electronics, which is also why I love robotics. I enjoy applying robotics to various fields like medical technology."
+  bio              : "I'm an electrical engineering student at Georgia Tech passionate about technology that improves peoples' lives. I love the combination of hardware, software, and electronics, which is also why I love robotics. I enjoy applying robotics to various fields like medical technology."
   location         : "Atlanta, GA"
   # email            : "sagarwal614@gatech.edu"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
